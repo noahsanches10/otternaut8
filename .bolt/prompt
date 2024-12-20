@@ -1,0 +1,53 @@
+For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+
+By default, this template supports JSX syntax with Tailwind CSS classes, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+
+Use icons from lucide-react for logos.
+
+Software Name:
+Otternaut
+
+Software Overview:
+Otternaut is a sales enablement tool focused on lead management and campaign automation for small to medium-sized businesses. It prioritizes scalability, user-friendliness, and seamless integrations.
+
+Development Goals (Milestone 12 - Analytics Enhancement):
+
+1. We'll create better reporting metric visuals and incorporate historical trends.
+2. We'll make sure the leaderboard is properly functioning and tracking performance
+3. We'll improve the way the gamification, specifically in the badges functionality.
+
+
+
+### File Organization:
+- Keep all report-related queries/functions in a dedicated **Analytics** utility file (e.g., `analytics.js` or `analyticsUtils.js`).
+- Ensure the frontend components update dynamically when new data is fetched.
+
+### Key Considerations:
+- Verify that `created_at` is indexed in Supabase for performance when running queries.
+- Ensure any missing or null values in `line_item_price`, `sale_value`, or `lead_source` are handled gracefully (e.g., default to 0).
+
+
+Proper Synchronization Between Codebase and Supabase:
+   - All files in the `db-scripts` folder represent SQL queries that have been executed in Supabase.
+     - First query executed: `"1.1-leads-customers-profile-table.sql"`.
+     - Last query executed: `"4.3-analytics-table.sql"`.
+   - **Do not edit existing SQL files**. If additional tables or updates are required, provide new SQL files (e.g., "4.4-...", "4.5-...").
+
+File Organization:
+- Create an `Analytics` folder in the codebase for all components and related files.
+- Add subfolders for metrics, badges, leaderboard, and goals.
+
+Guidelines for Code Structure:
+1. Write modular and reusable components for each section (e.g., `MetricCard`, `BadgeCard`, `LeaderboardTable`).
+2. Limit file sizes to 200-250 lines for readability.
+3. Focus on clean, testable, and maintainable code.
+
+Core Stack:
+1. React for the frontend. For toaster notifications use the custom one made in this file: src/components/ui/toast.tsx.
+2. Tailwind CSS for styling (with shadcn/ui components for consistency).
+3. Supabase for storing and retrieving analytics data.
+
+Principles:
+1. Prioritize simplicity and clarity in UI design while making the page engaging and motivating.
+2. Ensure that the gamification features encourage user engagement without becoming overwhelming.
+3. Build scalability into the metrics system to add future data points as needed.
